@@ -1,4 +1,29 @@
-# Lightbox2
+# Lightbox2 #
+
+## PixelAgency changes ##
+
+Changes:
+
+* Option to show videos and/or iframe video (such as youtube/vimeo).
+
+## Example ##
+
+You need to set the fields `kind` and `size`. The `kind` can be `image`, `video` or `iframe`.
+The href in this case will be the video URL.
+The size instead is used to have a specific size for the lightbox, so it should be of the same resolution as the video/iframe.
+If showing an image you can skip this fields.
+
+```php
+<a href="<?= $url ?>" data-lightbox="gallery" data-kind="<?= $kind ?>" data-size="<?= $image ?>">
+  <img data-src="<?= $thumb ?>" alt="<?= $alt ?>">
+</a>
+```
+
+### Note ###
+This version in based on 2.11.4 that includes a few changes in naming.
+I've also added a SCSS file since that's what we use.
+
+## Original README ##
 
 The _original_ lightbox script.
 
@@ -10,23 +35,3 @@ Lightbox is small javascript library used to overlay images on top of the curren
 - **License.** Lightbox is licensed under the MIT License. [Learn more about the license.](http://lokeshdhakar.com/projects/lightbox2/#license)
 
 by [Lokesh Dhakar](http://www.lokeshdhakar.com)
-
----
-
-## Info for Maintainers
-
-- **Issues and PRs requiring review.** See items tagged with [\[status\] needs review](https://github.com/lokesh/lightbox2/labels/%5Bstatus%5D%20needs%20review)
-- **Questions on Stackoverflow.** See Questions tagged with [lightbox2](https://stackoverflow.com/questions/tagged/lightbox2).
-- **Release instructions.** See [DEPLOY.md](https://github.com/lokesh/lightbox2/blob/master/DEPLOY.md).
-
-
-### Local development
-
-Some old tech, but it works, so no upgrading till something breaks.
-
-- Install [Bower](https://bower.io/) and [Grunt](https://gruntjs.com/): `npm install -g bower grunt`
-- Install jQuery dependency with Bower: `bower install`
-- Start local server: `grunt`
-- Navigate to `localhost:8000/examples`
-- Update `examples/index.html` to load jQuery and `src/js/lightbox.js`.
-
